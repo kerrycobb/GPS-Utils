@@ -35,9 +35,11 @@ gps2csv [OPTIONS]
 Options:
   --device TEXT        Name of device to get waypoints from. Default: GARMIN
   --format TEXT        File format to output waypoints to. Default: csv
-  --sort_by TEXT       Column to be sorted in output csv; use "name", "date", "time", "latitude", or "elev". Default: name
+  --sort_by TEXT       Column to be sorted in output csv; use "name", "date",
+                       "time", "latitude", or "elev". Default: name
   --auto_open BOOLEAN  Open file automatically. Default: True
-  --output FILENAME    Path to output file. Default: <current workdir path>/<device name>.csv
+  --output FILENAME    Path to output file. Default: <current workdir
+                       path>/<device name>.csv
   -h, --help           Show this message and exit.
 ```
 
@@ -58,13 +60,15 @@ Usage: gps2kml [OPTIONS]
 
   Load data from GPS into Google Earth
 
-Options:
-  --device TEXT        Name of device to get waypoints from. Default: GARMIN
-  --output FILENAME    Path to output file. Default: "<current workdir path>/<device name>.kml"
-  --auto_open BOOLEAN  Open file automatically. Default: True
-  --data TEXT          Data to load from gps. Valid options are: "all", "tracks", "waypoints"
-  --archive TEXT       Load
-  -h, --help           Show this message and exit.
+  Options:
+    --device TEXT        Name of device to get waypoints from. Default: GARMIN
+    --output FILENAME    Path to output file. Default: "<current workdir
+                         path>/<device name>.kml"
+    --auto_open BOOLEAN  Open file automatically. Default: True
+    --data TEXT          Data to load from gps. Valid options are: "all",
+                         "tracks", "waypoints"
+    --archive TEXT       Load archived tracks
+    -h, --help           Show this message and exit.
 ```
 
 
