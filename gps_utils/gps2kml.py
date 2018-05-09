@@ -71,9 +71,13 @@ def tracks(mount_path, kml, archive):
                 ls.style.linestyle.width = 2
                 ls.style.linestyle.color = simplekml.Color.blue
                 # try:
-                #     midpoint = coords[int(len(ls) / 2)]
+                #     midpoint = coords[int(len(coords) / 2)]
+                #     ls.lookat.longitude = midpoint[0]
+                #     ls.lookat.latitude = midpoint[1]
+                #     ls.lookat.range = 3000
+                #     ls.lookat.tilt = 0
                 # except:
-                #     pass 
+                #     pass
 
 
 
@@ -92,3 +96,7 @@ def waypoints(mount_path, kml):
             time = waypoint.time.time().isoformat()
             description = 'Date: {}<br>Time: {}'.format(date, time)
             pnt = kml.newpoint(name=name, coords=coords, description=description)
+            # pnt.lookat.longitude = coords[0][0]
+            # pnt.lookat.latitude = coords[0][1]
+            # pnt.lookat.range = 3000
+            # pnt.lookat.tilt = 0
