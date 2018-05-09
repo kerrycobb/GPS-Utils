@@ -1,13 +1,14 @@
 # GPS-Utils
 Command line utilites for accessing and visualizing data from a Garmin GPS device.
 
-- GPS2CSV
+- **GPS2CSV**
     - Load GPS data into excel or similar program or just output to file
-- GPS2KML
+- **GPS2KML**
     - Load GPS data into Google Earth or just output to KML file
 
 This package has only been tested on a Mac but should work on Linux and may work on Windows operating systems.
 
+<br><br>
 
 ## Installation
 To install enter the following command into your terminal:
@@ -16,6 +17,7 @@ To install enter the following command into your terminal:
 pip install git+https://github.com/kerrycobb/gps-utils
 ```
 
+<br><br>
 
 ## GPS2CSV
 Load data from GPS into csv file and open in system default application
@@ -39,6 +41,7 @@ Options:
   -h, --help           Show this message and exit.
 ```
 
+<br><br>
 
 ## GPS2KML
 Load waypoints and/or tracks into KML file and open in Google Earth.
