@@ -15,7 +15,7 @@ pip install git+https://github.com/kerrycobb/gps-utils
 ## GPS2CSV
 Load data from GPS into csv file and open in system default application
 
-<img src="imgs/csv.png" width="250px">
+<img src="imgs/csv.png" width="300px">
 
 #### Usage
 For the most basic usage simply enter `gps2csv` at the command line. This will load all waypoints from a GPS unit named GARMIN and output it to a CSV file in the current working directory and then open the CSV file in your systems default application.
@@ -38,7 +38,7 @@ Options:
 ## GPS2KML
 Load waypoints and/or tracks into KML file and open in Google Earth.
 
-<img src="imgs/kml.png" width="250px">
+<img src="imgs/kml.png" width="300px">
 
 #### Usage
 For the most basic usage simply enter `gps2kml` at the command line. This will load all waypoints and tracks from a GPS unit named GARMIN and output it to a KML file in the current working directory and then open the KML file in Google Earth.
