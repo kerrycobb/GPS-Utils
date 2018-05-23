@@ -67,7 +67,7 @@ Usage: gps2kml [OPTIONS]
     --auto_open BOOLEAN  Open file automatically. Default: True
     --data TEXT          Data to load from gps. Valid options are: "all",
                          "tracks", "waypoints"
-    --archive TEXT       Load archived tracks, Default: True
+    --archive BOOLEAN    Load archived tracks, Default: True
     -h, --help           Show this message and exit.
 ```
 
