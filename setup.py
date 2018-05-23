@@ -18,8 +18,8 @@ st.setup(
     ],
     entry_points={
         'console_scripts':[
-            'gps2kml=gps_utils.gps2kml_cli:cli',
-            'gps2csv=gps_utils.gps2csv_cli:cli'
+            'gps2kml=gps_utils.cli:kml_cli',
+            'gps2csv=gps_utils.cli:csv_cli'
 
         ]
     },

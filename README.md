@@ -25,7 +25,7 @@ Load data from GPS into csv file and open in system default application
 <img src="imgs/csv.png" width="300px">
 
 #### Usage
-For the most basic usage simply enter `gps2csv` at the command line. This will load all waypoints from a GPS unit named GARMIN and output it to a CSV file in the current working directory and then open the CSV file in your systems default application.
+For the most basic usage simply enter `gps2csv` at the command line. This will load all waypoints from a mounted GPS device named GARMIN and output it to a CSV file in the current working directory and then open the CSV file in your system's default application.
 
 For a list of all options enter `gps2csv -h` and you will see the following output:
 
@@ -51,7 +51,7 @@ Load waypoints and/or tracks into KML file and open in Google Earth.
 <img src="imgs/kml.png" width="300px">
 
 #### Usage
-For the most basic usage simply enter `gps2kml` at the command line. This will load all waypoints and tracks from a GPS unit named GARMIN and output it to a KML file in the current working directory and then open the KML file in Google Earth.
+For the most basic usage simply enter `gps2kml` at the command line. This will load all waypoints and tracks from a mounted GPS unit named GARMIN and output it to a KML file in the current working directory and then open the KML file in Google Earth.
 
 For a list of all options enter `gps2kml -h` and you will see the following output:
 
@@ -67,7 +67,7 @@ Usage: gps2kml [OPTIONS]
     --auto_open BOOLEAN  Open file automatically. Default: True
     --data TEXT          Data to load from gps. Valid options are: "all",
                          "tracks", "waypoints"
-    --archive TEXT       Load archived tracks
+    --archive TEXT       Load archived tracks, Default: True
     -h, --help           Show this message and exit.
 ```
 
