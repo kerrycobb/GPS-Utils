@@ -22,7 +22,7 @@ pip install git+https://github.com/kerrycobb/gps-utils
 ## GPS2CSV
 Load data from GPS into csv file and open in system default application
 
-<img src="imgs/csv.png" width="300px">
+<img src="imgs/csv.png" width="350px">
 
 #### Usage
 For the most basic usage simply enter `gps2csv` at the command line. This will load all waypoints from a mounted GPS device named GARMIN and output it to a CSV file in the current working directory and then open the CSV file in your system's default application.

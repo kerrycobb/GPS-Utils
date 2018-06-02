@@ -45,6 +45,7 @@ class GPS():
             local_datetime = utc_to_timezone(utc_date, utc_time, tz)
             df.loc[i, 'date (local)'] = local_datetime[0]
             df.loc[i, 'time (local)'] = local_datetime[1]
+        df = df[['name', 'date (local)', 'time (local)', 'timezone', 'date (UTC)', 'time (UTC)', 'lat', 'lon', 'elev (m)']]
         if output:
             outpath = os.path.abspath(output)
         else:
