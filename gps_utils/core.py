@@ -6,6 +6,20 @@ import gpxpy
 import pandas
 import subprocess
 import simplekml
+import numba
+from timezonefinder import TimezoneFinder
+from datetime import datetime
+from dateutil import tz
+
+def utc_to_timezone(utc_date, utc_time, zone):
+    d = list(map(int, utc_date.split('-')))
+    t = list(map(int, utc_time.split(':')))
+    utc_dt = datetime(d[0], d[1], d[2], t[0], t[1], t[2])
+    utc_zone = tz.gettz('UTC')
+    to_zone = tz.gettz(zone)
+    utc_dt = utc_dt.replace(tzinfo=utc_zone)
+    local_dt = utc_dt.astimezone(to_zone)
+    return(local_dt.date().isoformat(), local_dt.time().isoformat())
 
 class GPS():
     def __init__(self, device='GARMIN'):
@@ -20,8 +34,17 @@ class GPS():
 
     def to_csv(self, format='csv', sort_by='name', auto_open=True, output=None):
         waypoints = self.get_waypoints()
-        headers = ['name', 'date (UTC)', 'time (UTC)', 'latitude', 'longitude', 'elev (m)']
+        headers = ['name', 'date (UTC)', 'time (UTC)', 'lat', 'lon', 'elev (m)']
         df = pandas.DataFrame(waypoints, columns=headers).sort_values(sort_by)
+        tf = TimezoneFinder()
+        for i, row in df.iterrows():
+            tz = tf.certain_timezone_at(lng=row['lon'], lat=row['lat'])
+            df.loc[i,'timezone'] = tz
+            utc_date = row['date (UTC)']
+            utc_time = row['time (UTC)']
+            local_datetime = utc_to_timezone(utc_date, utc_time, tz)
+            df.loc[i, 'date (local)'] = local_datetime[0]
+            df.loc[i, 'time (local)'] = local_datetime[1]
         if output:
             outpath = os.path.abspath(output)
         else:
