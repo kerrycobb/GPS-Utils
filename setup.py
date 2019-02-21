@@ -15,6 +15,8 @@ st.setup(
         'click',
         'simplekml',
         'psutil',
+        'numba',
+        'timezonefinder',
     ],
     entry_points={
         'console_scripts':[
