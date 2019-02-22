@@ -6,7 +6,6 @@ import gpxpy
 import pandas
 import subprocess
 import simplekml
-import numba
 from timezonefinder import TimezoneFinder
 from datetime import datetime
 from dateutil import tz
@@ -61,10 +60,14 @@ class GPS():
         else:
             sys.exit('"{}" is not a valid file type; use csv or xlsx'.format(format))
         if auto_open is True:
-            if os.name == 'nt':
-                os.startfile(path)
-            else:
+            if sys.platform.startswith('darwin'):
                 subprocess.call(('open', path))
+            elif os.name == 'nt': # For Windows
+                os.startfile(path)
+            elif os.name == 'posix': # For Linux, Mac, etc.
+                subprocess.call(('xdg-open', path))
+            else:
+                print("Operating system not recognized. Unable to auto open KML")
         print('{} file saved to {}'.format(format, os.path.abspath(path)))
 
     def to_kml(self, output=None, auto_open=True, data='all', archive=True):
@@ -84,10 +87,14 @@ class GPS():
             kml_path = os.path.join(os.getcwd(), '{}.kml'.format(self.device_name))
         kml.save(kml_path)
         if auto_open is True:
-            if os.name == 'nt':
-                os.startfile(kml_path)
-            else:
+            if sys.platform.startswith('darwin'):
                 subprocess.call(('open', kml_path))
+            elif os.name == 'nt': # For Windows
+                os.startfile(kml_path)
+            elif os.name == 'posix': # For Linux, Mac, etc.
+                subprocess.call(('xdg-open', kml_path))
+            else:
+                print("Operating system not recognized. Unable to auto open KML")
         print('KML file saved to {}'.format(kml_path))
 
     def get_waypoints(self):
