@@ -2,11 +2,9 @@
 Command line utilites for accessing and visualizing data from a Garmin GPS device.
 
 - **GPS2CSV**
-    - Load GPS data into excel or similar program or just output to file
+    - Output GPS waypoints to CSV file.
 - **GPS2KML**
-    - Load GPS data into Google Earth or just output to KML file
-
-This package has only been tested on a Mac but should work on Linux and may work on Windows operating systems.
+    - Output GPS data to Google Earth KML file.
 
 <br><br>
 
@@ -20,7 +18,7 @@ pip install git+https://github.com/kerrycobb/gps-utils
 <br><br>
 
 ## GPS2CSV
-Load data from GPS into csv file and open in system default application
+Load data from GPS into csv file.
 
 <img src="imgs/csv.png" width="350px">
 
@@ -32,45 +30,38 @@ For a list of all options enter `gps2csv -h` and you will see the following outp
 ```
 gps2csv [OPTIONS]
 
+  Load waypoints from GPS into csv file
+
 Options:
-  --device TEXT        Name of device to get waypoints from. Default: GARMIN
-  --format TEXT        File format to output waypoints to. Default: csv
-  --sort_by TEXT       Column to be sorted in output csv; use "name", "date",
-                       "time", "latitude", or "elev". Default: name
-  --auto_open BOOLEAN  Open file automatically. Default: True
-  --output FILENAME    Path to output file. Default: <current workdir
-                       path>/<device name>.csv
-  -h, --help           Show this message and exit.
+  --device TEXT  Name of device to get waypoints from. Default: GARMIN
+  -h, --help     Show this message and exit.
+
 ```
 
 <br><br>
 
 ## GPS2KML
-Load waypoints and/or tracks into KML file and open in Google Earth.
+Output waypoints and/or tracks to Google Earth KML file.
 
 <img src="imgs/kml.png" width="300px">
 
 #### Usage
-For the most basic usage simply enter `gps2kml` at the command line. This will load all waypoints and tracks from a mounted GPS unit named GARMIN and output it to a KML file in the current working directory and then open the KML file in Google Earth.
+For the most basic usage simply enter `gps2kml` at the command line. This will load all waypoints and tracks from a mounted GPS unit named GARMIN and output it to a KML file in the current working directory.
 
 For a list of all options enter `gps2kml -h` and you will see the following output:
 
 ```
-Usage: gps2kml [OPTIONS]
+gps2kml [OPTIONS]
 
   Load data from GPS into Google Earth
 
-  Options:
-    --device TEXT        Name of device to get waypoints from. Default: GARMIN
-    --output FILENAME    Path to output file. Default: "<current workdir
-                         path>/<device name>.kml"
-    --auto_open BOOLEAN  Open file automatically. Default: True
-    --data TEXT          Data to load from gps. Valid options are: "all",
-                         "tracks", "waypoints"
-    --archive BOOLEAN    Load archived tracks, Default: True
-    -h, --help           Show this message and exit.
+Options:
+  --device TEXT      Name of device to get data from. Default: GARMIN
+  --output FILENAME  Path to output file. Default: "<current workdir
+                     path>/<device name>.kml"
+  --data TEXT        Data to load from gps. Valid options are: "all",
+                     "tracks", "waypoints"
+  --archive BOOLEAN  Load archived tracks, Default: True
+  -h, --help         Show this message and exit.
+
 ```
-
-
-#### Tip
-Google Earth will automatically tilt the window when zooming to your points and tracks which some may find annoying. This can be disabled in Google Earth `Preferences` under the `Navigation` tab. Check `Do not automatically tilt while zooming`
