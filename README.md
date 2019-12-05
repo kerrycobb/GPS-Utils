@@ -3,6 +3,8 @@ Command line utilites for accessing and visualizing data from a Garmin GPS devic
 
 - **GPS2CSV**
     - Output GPS waypoints to CSV file.
+- **GPS2MAP**
+    - Output GPS data to Leaflet map.
 - **GPS2KML**
     - Output GPS data to Google Earth KML file.
 
@@ -18,7 +20,7 @@ pip install git+https://github.com/kerrycobb/gps-utils
 <br><br>
 
 ## GPS2CSV
-Load data from GPS into csv file.
+Load waypoints from GPS into csv file.
 
 <img src="imgs/csv.png" width="350px">
 
@@ -34,7 +36,33 @@ gps2csv [OPTIONS]
 
 Options:
   --device TEXT  Name of device to get waypoints from. Default: GARMIN
+  --output FILENAME  Path to output file. Default: 
+                       "<current workdir path>/<device name>.html"
   -h, --help     Show this message and exit.
+
+```
+
+<br><br>
+## GPS2MAP
+Output waypoints and/or tracks to Leaflet map in html file.
+
+<img src="imgs/leaflet.png" width="300px">
+
+#### Usage
+For the most basic usage simply enter `gps2map` at the command line. This will load all waypoints and tracks from a mounted GPS unit named GARMIN and output it to an html file in the current working directory.
+
+For a list of all options enter `gps2map -h` and you will see the following output:
+
+```
+gps2kml [OPTIONS]
+
+  Load data from GPS into Leaflet map 
+
+Options:
+  --device TEXT      Name of device to get data from. Default: GARMIN
+  --output FILENAME  Path to output file. Default: 
+                       "<current workdir path>/<device name>.html"
+  -h, --help         Show this message and exit.
 
 ```
 
@@ -57,11 +85,8 @@ gps2kml [OPTIONS]
 
 Options:
   --device TEXT      Name of device to get data from. Default: GARMIN
-  --output FILENAME  Path to output file. Default: "<current workdir
-                     path>/<device name>.kml"
-  --data TEXT        Data to load from gps. Valid options are: "all",
-                     "tracks", "waypoints"
-  --archive BOOLEAN  Load archived tracks, Default: True
+  --output FILENAME  Path to output file. Default: 
+                       "<current workdir path>/<device name>.kml"
   -h, --help         Show this message and exit.
 
 ```
