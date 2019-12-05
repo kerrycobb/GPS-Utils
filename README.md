@@ -46,7 +46,7 @@ Options:
 ## GPS2MAP
 Output waypoints and/or tracks to Leaflet map in html file.
 
-<img src="imgs/map.png" width="300px">
+<img src="imgs/map.png" width="500px">
 
 #### Usage
 For the most basic usage simply enter `gps2map` at the command line. This will load all waypoints and tracks from a mounted GPS unit named GARMIN and output it to an html file in the current working directory.
@@ -71,7 +71,7 @@ Options:
 ## GPS2KML
 Output waypoints and/or tracks to Google Earth KML file.
 
-<img src="imgs/kml.png" width="300px">
+<img src="imgs/kml.png" width="500px">
 
 #### Usage
 For the most basic usage simply enter `gps2kml` at the command line. This will load all waypoints and tracks from a mounted GPS unit named GARMIN and output it to a KML file in the current working directory.
