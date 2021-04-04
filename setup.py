@@ -15,6 +15,7 @@ st.setup(
         "click",
         "simplekml",
         "psutil",
+        "folium",
         "timezonefinder"],
     entry_points={
         "console_scripts":[
