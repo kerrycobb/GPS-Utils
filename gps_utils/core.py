@@ -6,7 +6,6 @@ from datetime import datetime, timezone
 from dateutil import tz
 import subprocess
 import collections
-
 import gpxpy
 import folium
 import pandas as pd
